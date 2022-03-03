@@ -1,9 +1,24 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_1 = require("mongoose");
-const schema = new mongoose_1.Schema({
+//import {Schema, model, Document} from 'mongoose';
+const mongoose = require('mongoose');
+const schema = mongoose.Schema({
     title: String,
     description: String,
     imagePath: String
 });
-exports.default = (0, mongoose_1.model)('photo', schema);
+//export default model<Iphoto>('photo', schema);
+exports.default = mongoose.model('photo', schema);
+//OR
+// import {Schema, model, Document } from 'mongoose';
+// const schema = new Schema({
+//     title: String,
+//     description: String,
+//     imagePath: String
+// });
+// interface Iphoto extends Document{
+//     title: string;
+//     description: string;
+//     imagePath: string;
+// }
+// export default model<Iphoto>('photo', schema);

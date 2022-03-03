@@ -3,7 +3,9 @@ const mongoose = require('mongoose');
 require('dotenv').config({ path: 'vars.env' });
 const conectarDB = async () => {
     try {
-        await mongoose.connect(process.env.DB_MONGO, {});
+        await mongoose.connect(process.env.DB_MONGO, {
+            useNewUrlParser: true,
+        });
         console.log('databse is connected');
     }
     catch (error) {

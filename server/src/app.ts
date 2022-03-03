@@ -2,6 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import indexRoutes from './routes/index';
 import path from 'path';
+const cors = require('cors');
 
 
 const app = express();
@@ -10,6 +11,7 @@ const app = express();
 app.set('port', process.env.PORT || 4000);
 
 //Middelwares
+app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 
